@@ -7,14 +7,14 @@ import Page from './Page'
 function Location() {
   const [location, setlocation] = useState({})
   const [input, setInput] = useState('')
-  const [page, setPage] = useState({})
+  const [page, setPage] = useState()
 
   const random = Math.floor(Math.random() * 126) + 1
 
   let api = 'https://rickandmortyapi.com/api/location'
 
   useEffect(() => {
-    axios.get(`${api}/${random}`).then((res) => setlocation(res.data))
+    axios.get(`${api}/`).then((res) => setlocation(res.data))
     axios.get(`${api}?page=3`).then((res) => setPage(res.data.results))
   }, [])
 
@@ -26,11 +26,13 @@ function Location() {
     axios.get(`${api}/${e}`).then((res) => setlocation(res.data))
   }
 
-  console.log(location)
+  const { info, results } = location
+
+  console.log(results)
 
   return (
     <>
-      <h1 className='title'>Rick and Morty Wiki</h1>
+      <h1 className='title text-blue-900'>Rick and Morty Wiki</h1>
       <h2 className='subtitle'>{location?.name}</h2>
       <h3>Type: {location.type}</h3>
       <h3>Dimension: {location.dimension}</h3>
