@@ -46,7 +46,7 @@ function Location() {
       <Input page={page} search={search} />
 
       <div className='mt-3 bg-slate-700 flex justify-center'>
-        <ul className=' py-6 sm:grid sm:grid-cols-2 md:grid-cols-3 max-w-5xl '>
+        <ul className='py-6 sm:grid sm:grid-cols-1 max-w-5xl '>
           {currentPost?.map((resident) => (
             <Resident key={resident} url={resident} />
           ))}

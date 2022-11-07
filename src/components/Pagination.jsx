@@ -6,7 +6,7 @@ const Pagination = ({ totalPost, postPerPage, setPageNumber, pageNumber }) => {
     pages.push(i)
   }
 
-  console.log(pages)
+  // console.log(pages)
 
   return (
     <div className='bg-slate-700 text-zinc-200  h-full flex justify-center items-center pb-12'>
@@ -18,7 +18,7 @@ const Pagination = ({ totalPost, postPerPage, setPageNumber, pageNumber }) => {
               key={index}
               className={`${
                 page === pageNumber ? 'active' : ''
-              } rounded-lg h-8 w-8 hover:bg-cyan-900 transition-colors duration-300 bg-slate-800 shadow-lg shadow-slate-900`}
+              } rounded-lg h-8 w-8 hover:bg-cyan-900 transition-colors duration-300 bg-slate-800 shadow-lg shadow-slate-900 `}
             >
               {page}
             </button>
