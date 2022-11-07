@@ -11,3 +11,7 @@ body {
 .custom-color {
   background-color: rgba(226, 232, 240, 0.6);
 }
+
+.active {
+  background-color: #0f172a;
+}

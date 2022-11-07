@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LocationInfo = ({ location }) => {
+const LocationInfo = ({ location, residents }) => {
   return (
     <div className='text-slate-600 flex flex-col items-center'>
       <h2 className='text-center text-4xl my-10 font-bold'>{location?.name}</h2>
