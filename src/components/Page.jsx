@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from 'react'
 
-const Page = ({ p, input, search }) => {
-  const [isVisible, setIsVisible] = useState(false)
-
+const Page = ({ p, input, search, isVisible, setIsVisible, setInput }) => {
   useEffect(() => {
     if (p.name.toLowerCase().includes(input.toLowerCase())) {
       setIsVisible(true)
     } else {
-      setIsVisible(false)
+      setIsVisible(!isVisible)
     }
   }, [input])
 
   return (
-    <div>{isVisible && <div onClick={() => search(p.id)}>{p.name}</div>}</div>
+    <div>
+      {isVisible && (
+        <div
+          className='border-b border-slate-200 cursor-pointer'
+          onClick={() => {
+            setIsVisible(false)
+            search(p.id)
+            setInput('')
+          }}
+        >
+          {p.name}
+        </div>
+      )}
+    </div>
 
     // );
   )
