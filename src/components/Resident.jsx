@@ -26,7 +26,7 @@ function Resident({ url }) {
         src={resident?.image}
         alt='character'
       />
-      <div className='bg-slate-200 p-3 sm:w-full py-6 text-slate-700'>
+      <div className='bg-gradient-to-r from-slate-200  to-slate-300 p-3 sm:w-full py-6 text-slate-700'>
         <div className='flex items-center gap-3 mb-2 '>
           <div className={`${circle()} w-3 h-3 rounded-full`}></div>
           <h2 className='text-2xl sm:text-3xl font-bold'> {resident?.name}</h2>
