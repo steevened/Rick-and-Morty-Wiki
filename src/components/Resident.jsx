@@ -20,11 +20,16 @@ function Resident({ url }) {
 
   return (
     <li className='my-8 mx-3 rounded-sm overflow-hidden shadow-lg shadow-slate-900'>
-      <img className='w-full' src={resident.image} alt='character' />
+      <img
+        loading='lazy'
+        className='w-full '
+        src={resident?.image}
+        alt='character'
+      />
       <div className='bg-slate-200 p-3'>
         <div className='flex items-center gap-3'>
           <div className={`${circle()} w-3 h-3 rounded-full`}></div>
-          <h2 className='text-2xl'> {resident.name}</h2>
+          <h2 className='text-2xl'> {resident?.name}</h2>
         </div>
         <p>Status: {resident.status}</p>
         <p>Origin: {resident.origin?.name}</p>

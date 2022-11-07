@@ -6,7 +6,7 @@ const Input = ({ page, search }) => {
   const [input, setInput] = useState('')
   const [selected, setSelected] = useState(false)
 
-  console.log(input)
+  // console.log(input)
 
   return (
     <div className='flex max-w-2xl w-5/6 mx-auto  flex-col justify-center my-10 relative'>

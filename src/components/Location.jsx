@@ -9,6 +9,8 @@ import Input from './Input'
 function Location() {
   const [location, setlocation] = useState({})
   const [page, setPage] = useState(1)
+  const [residents, setResidents] = useState([])
+  const [postPerPage, setPostPerPage] = useState(8)
 
   const random = Math.floor(Math.random() * 126) + 1
 
@@ -19,6 +21,7 @@ function Location() {
     axios
       .get(`https://rickandmortyapi.com/api/location/?page=${page}`)
       .then((res) => setPage(res.data.results))
+    axios.get(api).then((res) => setResidents(res.data.residents))
   }, [])
 
   const search = (e) => {
@@ -27,7 +30,11 @@ function Location() {
       .then((res) => setlocation(res.data))
   }
 
-  // console.log(page)
+  const lastPostIndex = page * postPerPage
+  const firsPostIndex = lastPostIndex * postPerPage
+  const currentPost = location?.residents?.slice(firsPostIndex, lastPostIndex)
+
+  console.log(location)
 
   return (
     <>
